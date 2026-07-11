@@ -1,0 +1,16 @@
+# Cấu hình riêng của VS Code
+.vscode/
+
+# File hệ điều hành
+Thumbs.db
+.DS_Store
+
+# File tạm và log
+*.tmp
+*.log
+
+# Cấu hình kết nối riêng của máy
+config/database.php
+
+# QR được sinh tự động
+qr/*.png
