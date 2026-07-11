@@ -106,6 +106,16 @@ if (
 
 $currentTableId = (int) $_SESSION['ma_ban'];
 $currentTableName = (string) $_SESSION['ten_ban'];
+$successMessage = isset($_SESSION['success_message'])
+    ? (string) $_SESSION['success_message']
+    : '';
+
+unset($_SESSION['success_message']);
+
+$cartQuantity = isset($_SESSION['cart'])
+    && is_array($_SESSION['cart'])
+        ? array_sum($_SESSION['cart'])
+        : 0;
 
 /*
 |--------------------------------------------------------------------------
@@ -293,6 +303,18 @@ while ($food = $foodResult->fetch_assoc()) {
                 padding: 18px 14px;
             }
         }
+        .success-message {
+            margin-bottom: 20px;
+            padding: 16px 20px;
+            background-color: #d1e7dd;
+            border: 1px solid #a3cfbb;
+            border-radius: 8px;
+            color: #0f5132;
+        }
+        .cart-summary {
+            margin-top: 10px;
+            font-size: 16px;
+        }
     </style>
 </head>
 
@@ -307,12 +329,32 @@ while ($food = $foodResult->fetch_assoc()) {
 <main class="container">
 
     <section class="table-information">
+
+    <div>
         Bạn đang gọi món tại:
 
         <strong>
             <?= escapeHtml($currentTableName) ?>
         </strong>
+    </div>
+
+    <div class="cart-summary">
+        Giỏ hàng hiện có:
+
+        <strong>
+            <?= escapeHtml($cartQuantity) ?> món
+        </strong>
+    </div>
+
+</section>
+
+<?php if ($successMessage !== ''): ?>
+
+    <section class="success-message">
+        <?= escapeHtml($successMessage) ?>
     </section>
+
+<?php endif; ?>
 
     <?php if (empty($foods)): ?>
 
