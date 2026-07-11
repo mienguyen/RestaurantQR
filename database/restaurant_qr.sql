@@ -53,3 +53,69 @@ CREATE TABLE chi_tiet_don_hang (
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 ) ENGINE=InnoDB;
+INSERT INTO ban_an (
+    ten_ban,
+    ma_qr,
+    trang_thai
+)
+VALUES
+('Bàn 1', NULL, 'Trống'),
+('Bàn 2', NULL, 'Trống'),
+('Bàn 3', NULL, 'Trống'),
+('Bàn 4', NULL, 'Trống'),
+('Bàn 5', NULL, 'Trống'),
+('Bàn 6', NULL, 'Trống'),
+('Bàn 7', NULL, 'Trống'),
+('Bàn 8', NULL, 'Trống'),
+('Bàn 9', NULL, 'Trống'),
+('Bàn 10', NULL, 'Trống');
+INSERT INTO mon_an (
+    ten_mon,
+    don_gia,
+    mo_ta,
+    hinh_anh,
+    trang_thai
+)
+VALUES
+(
+    'Cơm rang',
+    45000,
+    'Cơm rang thập cẩm',
+    'comrang.jpg',
+    'Còn món'
+),
+(
+    'Bún bò',
+    50000,
+    'Bún bò Huế',
+    'bunbo.jpg',
+    'Còn món'
+),
+(
+    'Phở bò',
+    55000,
+    'Phở bò tái',
+    'phobo.jpg',
+    'Còn món'
+),
+(
+    'Mì xào hải sản',
+    65000,
+    'Mì xào hải sản',
+    'mixao.png',
+    'Còn món'
+),
+(
+    'Trà đào',
+    30000,
+    'Trà đào thanh mát',
+    'tradao.png',
+    'Còn món'
+),
+(
+    'Coca Cola',
+    20000,
+    'Nước ngọt Coca Cola',
+    'coca.jpg',
+    'Còn món'
+);
