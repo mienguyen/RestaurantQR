@@ -180,6 +180,11 @@ while ($food = $foodResult->fetch_assoc()) {
         .header-inner {
             max-width: 1200px;
             margin: 0 auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
         }
 
         .header h1 {
@@ -315,6 +320,15 @@ while ($food = $foodResult->fetch_assoc()) {
             margin-top: 10px;
             font-size: 16px;
         }
+        .cart-link{
+            display: inline-block;
+            padding: 11px 17px;
+            background-color: #ffffff;
+            color: #981d1d;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -322,7 +336,17 @@ while ($food = $foodResult->fetch_assoc()) {
 
 <header class="header">
     <div class="header-inner">
+
         <h1>Thực đơn nhà hàng</h1>
+
+        <a
+            class="cart-link"
+            href="cart.php"
+        >
+            Giỏ hàng
+            (<?= escapeHtml($cartQuantity) ?>)
+        </a>
+
     </div>
 </header>
 
